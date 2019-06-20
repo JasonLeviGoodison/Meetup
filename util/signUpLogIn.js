@@ -1,7 +1,7 @@
 // var url = 'mongodb://localhost:27017/meetupdb';
 let UserModel = require('../models/users.model');
 
-module.exports.userLoginValid = function(body, res) {
+module.exports.signUpLogIn = function(body, res) {
     if ( !body ) {
         return res.send(400).send("Request body is missing");
     }

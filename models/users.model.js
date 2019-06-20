@@ -16,11 +16,11 @@ var schema = new mongo.Schema({
         require: true,
         unique: true
     },
-    status: String,
     accessToken: {
         type: String,
         require: true
     },
-    id: String
+    id: String,
+    courses: [String]
 });
 module.exports = mongo.model('users', schema);
