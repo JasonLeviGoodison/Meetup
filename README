@@ -1,0 +1,9 @@
+mongodb start with mongod command
+Front end app, start first with npm start
+backend app, start next with npm start
+checking mongo dbs
+	- run mongo
+	- show dbs
+	- use [dbname]
+	- db.users.find() // returns all
+	- lots of db. function() commands

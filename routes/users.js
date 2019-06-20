@@ -10,23 +10,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login', function(req, res) {
-  let {
-    status,
-    accessToken,
-    email,
-    id,
-    name,
-    userID
-  } = req.body;
-
-  // from here we should validate that the log in information is valid
-  // save it and log the lad in
-
-  if (!userLoginValid(email, userID, accessToken)) {
-    res.send({status: 'FAIlURE'});
-  }
-
-  res.send({accessToken, status: 'ACCEPT', action: 'SIGNED_UP'});
+  //TODO throws error if already in the system, places them in if not
+  userLoginValid(req.body, res);
 });
 
 
