@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-var { signUpLogIn } = require('../util/signUpLogIn')
-var { updateCourses } = require('../util/updateCourses')
-
+var { signUpLogIn } = require('../util/signUpLogIn');
+var { updateCourses } = require('../util/updateCourses');
+var { validateUser } = require('../util/validateUser');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -32,6 +32,10 @@ router.put('/updateCourses', function(req, res) {
     res.status(400).send('This endpoint is for updating');
   }
   updateCourses(req.body, res);
+});
+
+router.get('/testValidate', function (req, res ) {
+  validateUser(req.query, res);
 });
 
 module.exports = router;
