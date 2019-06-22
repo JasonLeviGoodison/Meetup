@@ -25,12 +25,6 @@ router.post('/login', function(req, res) {
 
 
 router.put('/updateCourses', function(req, res) {
-  let {
-    status
-  } = req.body;
-  if (status != 'UPDATE') {
-    res.status(400).send('This endpoint is for updating');
-  }
   updateCourses(req.body, res);
 });
 

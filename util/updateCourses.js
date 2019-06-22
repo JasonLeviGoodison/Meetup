@@ -1,4 +1,3 @@
-// var url = 'mongodb://localhost:27017/meetupdb';
 let UserModel = require('../models/users.model');
 
 module.exports.updateCourses = function(body, res) {
@@ -6,10 +5,10 @@ module.exports.updateCourses = function(body, res) {
         return res.send(400).send("Request body is missing");
     }
     let model = new UserModel(body)
-    let { email } = body;
+    let { email, courses } = body;
     UserModel.findOneAndUpdate(
         {email},
-        body,
+        {courses},
         {new: true}
     )
     .then( doc => {
